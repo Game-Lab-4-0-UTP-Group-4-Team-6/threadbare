@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://mbjl2cpc7luq"]
+[gd_scene load_steps=36 format=4 uid="uid://mbjl2cpc7luq"]
 
 [ext_resource type="PackedScene" uid="uid://v3usqiwy5wpr" path="res://scenes/game_elements/props/decoration/rock/rock.tscn" id="1_1y8by"]
 [ext_resource type="TileSet" uid="uid://07fq3rspk8ia" path="res://scenes/tileset.tres" id="2_eda4k"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://0av61m785mdu" path="res://scenes/quests/story_quests/aidecay/tilesetHospital/tilesethospital-4.png" id="7_7f2kn"]
 [ext_resource type="Texture2D" uid="uid://sj0secdwlijk" path="res://scenes/quests/story_quests/aidecay/tilesetHospital/Sprite-0007.png" id="8_w5jk5"]
 [ext_resource type="Script" uid="uid://deklm8jdjqpn5" path="res://scenes/quests/story_quests/aidecay/0_aidecay_intro/main_scene.gd" id="9_153fb"]
+[ext_resource type="Script" uid="uid://x1mxt6bmei2o" path="res://scenes/ui_elements/cinematic/cinematic.gd" id="11_w5jk5"]
+[ext_resource type="Resource" uid="uid://cqjngitoc5yx7" path="res://scenes/quests/story_quests/template/0_template_intro/template_intro_components/template_intro.dialogue" id="12_e3fge"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e3fge"]
 texture = ExtResource("5_ywmec")
@@ -21441,6 +21443,96 @@ cache/0/16/0/scale = 1.0
 default_base_scale = 0.38
 default_font = SubResource("FontFile_153fb")
 
+[sub_resource type="Animation" id="Animation_ld06i"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("OnTheGround/Character:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("OnTheGround/Character:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(400, 349)]
+}
+
+[sub_resource type="Animation" id="Animation_7swpb"]
+resource_name = "walk_off"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("OnTheGround/Character:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"walk", &"idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("OnTheGround/Character:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(495, 478), Vector2(1010, 478)]
+}
+
+[sub_resource type="Animation" id="Animation_blo5s"]
+resource_name = "walk_on"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("OnTheGround/Character:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"walk", &"idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("OnTheGround/Character:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-50, 478), Vector2(495, 478)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qdpvj"]
+_data = {
+&"RESET": SubResource("Animation_ld06i"),
+&"walk_off": SubResource("Animation_7swpb"),
+&"walk_on": SubResource("Animation_blo5s")
+}
+
 [sub_resource type="AudioStream" id="AudioStream_153fb"]
 
 [node name="Intro" type="Node2D"]
@@ -21502,9 +21594,20 @@ offset_right = 136.0
 offset_bottom = -42.0
 theme = SubResource("Theme_7f2kn")
 
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="TileMapLayers/MainScene/Character"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_qdpvj")
+}
+
 [node name="AlarmPlayer" type="AudioStreamPlayer" parent="TileMapLayers/MainScene"]
 stream = SubResource("AudioStream_153fb")
 
-[node name="AlarmTimer" type="Timer" parent="TileMapLayers/MainScene"]
-one_shot = true
-autostart = true
+[node name="ScreenOverlay" type="CanvasLayer" parent="."]
+
+[node name="Cinematic" type="Node2D" parent="." node_paths=PackedStringArray("animation_player")]
+script = ExtResource("11_w5jk5")
+dialogue = ExtResource("12_e3fge")
+animation_player = NodePath("")
+next_scene = "uid://coi4lvxir542y"
+metadata/_custom_type_script = "uid://x1mxt6bmei2o"
