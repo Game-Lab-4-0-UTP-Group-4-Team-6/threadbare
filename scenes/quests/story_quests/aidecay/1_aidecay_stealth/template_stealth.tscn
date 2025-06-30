@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://d00p6genpf7l1"]
+[gd_scene load_steps=17 format=4 uid="uid://baghbektpukfw"]
 
 [ext_resource type="Script" uid="uid://dnp0tjloec2d7" path="res://scenes/game_logic/stealth_game_logic.gd" id="1_fcpk6"]
 [ext_resource type="TileSet" uid="uid://07fq3rspk8ia" path="res://scenes/tileset.tres" id="2_drjpb"]

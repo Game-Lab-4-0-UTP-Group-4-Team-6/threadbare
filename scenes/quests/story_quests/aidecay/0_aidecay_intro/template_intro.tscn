@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://mbjl2cpc7luq"]
+[gd_scene load_steps=11 format=4 uid="uid://bh6obdcbapwl0"]
 
 [ext_resource type="TileSet" uid="uid://07fq3rspk8ia" path="res://scenes/tileset.tres" id="1_owfbm"]
 [ext_resource type="Texture2D" uid="uid://07k43id4c81h" path="res://scenes/quests/story_quests/template/0_template_intro/template_intro_components/template_Replace image.png" id="2_2x84u"]
