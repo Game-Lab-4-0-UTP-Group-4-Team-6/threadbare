@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://6ltusucksrb5"]
+[gd_scene load_steps=21 format=4 uid="uid://6ltusucksrb5"]
 
 [ext_resource type="Script" uid="uid://cp54mgi54nywo" path="res://scenes/game_logic/fill_game_logic.gd" id="1_nhcpf"]
 [ext_resource type="Resource" uid="uid://3vrn5jdxov37" path="res://scenes/quests/story_quests/template/2_template_combat/template_combat_components/template_combat.dialogue" id="2_dnuwx"]
@@ -2604,9 +2604,6 @@ name = ""
 type = 1
 metadata/_custom_type_script = "uid://bgmwplmj3bfls"
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ukdj0"]
-size = Vector2(65, 188)
-
 [node name="Combat" type="Node2D"]
 y_sort_enabled = true
 
@@ -2700,15 +2697,6 @@ next_scene = "uid://cufkthb25mpxy"
 item = SubResource("Resource_a51xm")
 collected_dialogue = ExtResource("2_dnuwx")
 dialogue_title = &"well_done"
-
-[node name="StaticBody2D" type="StaticBody2D" parent="OnTheGround"]
-position = Vector2(622, 209)
-collision_layer = 16
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="OnTheGround/StaticBody2D"]
-position = Vector2(23, 114)
-shape = SubResource("RectangleShape2D_ukdj0")
 
 [node name="ScreenOverlay" type="CanvasLayer" parent="."]
 

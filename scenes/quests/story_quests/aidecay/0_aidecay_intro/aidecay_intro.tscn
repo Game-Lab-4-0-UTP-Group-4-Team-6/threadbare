@@ -21594,7 +21594,7 @@ libraries = {
 script = ExtResource("11_w5jk5")
 dialogue = ExtResource("10_7f2kn")
 animation_player = NodePath("../OnTheGround/AnimationPlayer")
-next_scene = "uid://d00p6genpf7l1"
+next_scene = "uid://bga8iwyvwvi3n"
 metadata/_custom_type_script = "uid://x1mxt6bmei2o"
 
 [node name="BackgroundMusic" parent="Cinematic" instance=ExtResource("12_e3fge")]
