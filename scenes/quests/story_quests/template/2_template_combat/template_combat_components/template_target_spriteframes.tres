@@ -1,9 +1,9 @@
 [gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://c50725q5ey5j5"]
 
-[ext_resource type="Texture2D" uid="uid://ckvu6bnejmg5a" path="res://scenes/quests/story_quests/aidecay/barril/Sprite-0002.png" id="1_kf7lf"]
-[ext_resource type="Texture2D" uid="uid://bssbksjdir1j6" path="res://scenes/quests/story_quests/aidecay/barril/Sprite-0003.png" id="2_1vs81"]
-[ext_resource type="Texture2D" uid="uid://opy7bs3jko8t" path="res://scenes/quests/story_quests/aidecay/barril/Sprite-0004.png" id="3_3uxt6"]
-[ext_resource type="Texture2D" uid="uid://dt60rs0ep7are" path="res://scenes/quests/story_quests/aidecay/barril/Sprite-0005.png" id="4_o8k6q"]
+[ext_resource type="Texture2D" uid="uid://qlmdvtu3selr" path="res://scenes/quests/story_quests/aidecay/barril/Sprite-0002.png" id="1_kf7lf"]
+[ext_resource type="Texture2D" uid="uid://bd41kditmw0ft" path="res://scenes/quests/story_quests/aidecay/barril/Sprite-0003.png" id="2_1vs81"]
+[ext_resource type="Texture2D" uid="uid://cjej8uub6ufhc" path="res://scenes/quests/story_quests/aidecay/barril/Sprite-0004.png" id="3_3uxt6"]
+[ext_resource type="Texture2D" uid="uid://b67u8cp2wubb1" path="res://scenes/quests/story_quests/aidecay/barril/Sprite-0005.png" id="4_o8k6q"]
 
 [resource]
 animations = [{

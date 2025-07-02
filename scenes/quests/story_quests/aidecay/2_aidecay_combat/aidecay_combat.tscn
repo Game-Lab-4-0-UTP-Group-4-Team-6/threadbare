@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://6ltusucksrb5"]
+[gd_scene load_steps=22 format=4 uid="uid://6ltusucksrb5"]
 
 [ext_resource type="Script" uid="uid://cp54mgi54nywo" path="res://scenes/game_logic/fill_game_logic.gd" id="1_nhcpf"]
 [ext_resource type="Resource" uid="uid://3vrn5jdxov37" path="res://scenes/quests/story_quests/template/2_template_combat/template_combat_components/template_combat.dialogue" id="2_dnuwx"]
@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://fuhl3l6gxq5k" path="res://scenes/game_elements/props/collectible_item/collectible_item.tscn" id="8_p8m4v"]
 [ext_resource type="Script" uid="uid://bgmwplmj3bfls" path="res://scenes/globals/game_state/inventory/inventory_item.gd" id="9_5oxvp"]
 [ext_resource type="PackedScene" uid="uid://cfcgrfvtn04yp" path="res://scenes/ui_elements/hud/hud.tscn" id="10_egkkn"]
+[ext_resource type="PackedScene" uid="uid://2rbpl811wlv1" path="res://scenes/game_elements/props/background_music/background_music.tscn" id="14_ukdj0"]
+[ext_resource type="AudioStream" uid="uid://c1y5uaen082ov" path="res://scenes/quests/story_quests/aidecay/0_aidecay_intro/aidecay_intro_components/galactic-frenzy-343834.mp3" id="15_1cyfw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1cyfw"]
 texture = ExtResource("4_xrk3j")
@@ -2602,6 +2604,9 @@ name = ""
 type = 1
 metadata/_custom_type_script = "uid://bgmwplmj3bfls"
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ukdj0"]
+size = Vector2(65, 188)
+
 [node name="Combat" type="Node2D"]
 y_sort_enabled = true
 
@@ -2609,6 +2614,9 @@ y_sort_enabled = true
 script = ExtResource("1_nhcpf")
 intro_dialogue = ExtResource("2_dnuwx")
 metadata/_custom_type_script = "uid://cp54mgi54nywo"
+
+[node name="BackgroundMusic" parent="FillGameLogic" instance=ExtResource("14_ukdj0")]
+stream = ExtResource("15_1cyfw")
 
 [node name="TileMapLayers" type="Node2D" parent="."]
 position = Vector2(1461, 59)
@@ -2619,7 +2627,6 @@ tile_map_data = PackedByteArray("AAANAAcAAQABAAEAAAANAAYAAQABAAEAAAANAAUAAQABAAE
 tile_set = ExtResource("3_33hb6")
 
 [node name="Stones" type="TileMapLayer" parent="TileMapLayers"]
-visible = false
 position = Vector2(-44, -29)
 tile_map_data = PackedByteArray("AAAGAAkABAABAAUAAAAHAAkABAABAAUAAAAIAAkABAABAAUAAAAJAAkABAABAAUAAAAKAAkABAABAAUAAAALAAkABAABAAUAAAAMAAkABAABAAUAAAANAAkABAABAAUAAAAOAAkABAABAAUAAAAGAAgABAABAAQAAAAHAAgABAABAAQAAAAIAAgABAABAAQAAAAJAAgABAABAAQAAAAKAAgABAABAAQAAAALAAgABAABAAQAAAAMAAgABAABAAQAAAANAAgABAABAAQAAAAOAAgABAABAAQAAAAAAAEABAACAAEAAAABAAEABAABAAMAAAACAAEABAABAAUAAAACAAAABAABAAQAAAABAAAABAABAAIAAAAAAAAABAABAAEAAAADAAAABAABAAIAAAAFAAAABAACAAIAAAAEAAAABAABAAEAAAAEAAEABAABAAMAAAAFAAEABAABAAUAAAADAAEABAABAAUAAAANAAcABAAAAAEAAAAOAAcABAABAAEAAAANAAYABAAAAAAAAAAOAAYABAABAAEAAAAOAAUABAAAAAEAAAAOAAMABAAAAAEAAAAOAAIABAABAAEAAAANAAEABAAAAAEAAAANAAAABAABAAAAAAAOAAAABAABAAAAAAAOAAEABAABAAEAAAAOAAQABAAAAAEAAAAMAAAABAABAAAAAAALAAAABAABAAAAAAAKAAAABAABAAAAAAAJAAAABAABAAAAAAAIAAAABAABAAAAAAAHAAAABAAAAAEAAAANAAIABAAAAAIAAAANAAMABAAAAAMAAAAHAAEABAABAAMAAAAIAAEABAABAAUAAAAKAAEABAABAAUAAAALAAEABAABAAUAAAAJAAEABAABAAMAAAAMAAEABAABAAMAAAAGAAAABAABAAIAAAAGAAEABAABAAMAAAAAAAkABAABAAUAAAABAAkABAABAAUAAAACAAkABAABAAUAAAADAAkABAABAAUAAAAEAAkABAABAAUAAAAFAAkABAABAAUAAAAAAAgABAABAAQAAAABAAgABAABAAQAAAACAAgABAABAAQAAAADAAgABAABAAQAAAAEAAgABAABAAQAAAAFAAgABAABAAQAAAAAAAIABAACAAEAAAAAAAMABAACAAEAAAAAAAQABAACAAEAAAAAAAcABAACAAEAAAAAAAYABAACAAEAAAAAAAUABAACAAEAAAD8/wAABAABAAUAAAD7/wAABAABAAUAAAD6/wAABAABAAUAAAD5/wAABAABAAUAAAD4/wAABAABAAUAAAD3/wAABAABAAUAAAD3/wEABAABAAUAAAD2/wAABAABAAUAAAD1/wAABAABAAUAAAD0/wAABAABAAUAAADy/wAABAABAAUAAADx/wAABAABAAUAAADw/wAABAABAAUAAADv/wAABAABAAUAAADu/wAABAABAAUAAADt/wAABAABAAUAAADs/wAABAABAAUAAADr/wAABAABAAUAAADq/wAABAABAAUAAAD9/wEABAAAAAIAAAD9/wIABAAAAAIAAAD9/wMABAAAAAIAAAD9/wQABAAAAAIAAAD9/wUABAAAAAIAAAD9/wYABAAAAAIAAAD9/wcABAAAAAIAAAD9/wgABAAAAAIAAAD+/wgABAAAAAIAAAD+/wkABAAAAAIAAAD9/wkABAAAAAIAAAD9/woABAAAAAIAAAD8/wkABAABAAQAAAD7/wkABAABAAQAAAD6/wkABAABAAQAAAD5/wkABAABAAQAAAD4/wkABAABAAQAAAD3/wkABAABAAQAAAD2/woABAABAAQAAAD1/woABAABAAQAAAD0/woABAABAAQAAADz/woABAABAAQAAADy/woABAABAAQAAADx/woABAABAAQAAADw/woABAABAAQAAADv/wkABAABAAQAAADu/wkABAABAAQAAADu/woABAABAAQAAADt/woABAABAAQAAADs/woABAABAAQAAADr/woABAABAAQAAADr/wkABAABAAQAAADs/wkABAABAAQAAADt/wkABAABAAQAAADq/wkABAABAAQAAADq/wEABAACAAEAAADq/wIABAACAAEAAADq/wMABAACAAEAAADq/wQABAACAAEAAADq/wUABAACAAEAAADq/wYABAACAAEAAADq/wcABAACAAEAAADq/wgABAACAAEAAAA=")
 tile_set = ExtResource("3_33hb6")
@@ -2693,6 +2700,15 @@ next_scene = "uid://cufkthb25mpxy"
 item = SubResource("Resource_a51xm")
 collected_dialogue = ExtResource("2_dnuwx")
 dialogue_title = &"well_done"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="OnTheGround"]
+position = Vector2(622, 209)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OnTheGround/StaticBody2D"]
+position = Vector2(23, 114)
+shape = SubResource("RectangleShape2D_ukdj0")
 
 [node name="ScreenOverlay" type="CanvasLayer" parent="."]
 
