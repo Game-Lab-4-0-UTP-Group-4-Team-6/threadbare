@@ -2612,6 +2612,9 @@ script = ExtResource("1_nhcpf")
 intro_dialogue = ExtResource("2_dnuwx")
 metadata/_custom_type_script = "uid://cp54mgi54nywo"
 
+[node name="BackgroundMusic" parent="FillGameLogic" instance=ExtResource("14_ukdj0")]
+stream = ExtResource("15_1cyfw")
+
 [node name="TileMapLayers" type="Node2D" parent="."]
 position = Vector2(1461, 59)
 
@@ -2708,8 +2711,5 @@ limit_right = 2048
 limit_bottom = 2048
 position_smoothing_enabled = true
 editor_draw_limits = true
-
-[node name="BackgroundMusic" parent="." instance=ExtResource("14_ukdj0")]
-stream = ExtResource("15_1cyfw")
 
 [connection signal="goal_reached" from="FillGameLogic" to="OnTheGround/CollectibleItem" method="reveal"]

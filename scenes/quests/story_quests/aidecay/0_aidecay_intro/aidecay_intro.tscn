@@ -21596,9 +21596,9 @@ animation_player = NodePath("../OnTheGround/AnimationPlayer")
 next_scene = "uid://bga8iwyvwvi3n"
 metadata/_custom_type_script = "uid://x1mxt6bmei2o"
 
+[node name="BackgroundMusic" parent="Cinematic" instance=ExtResource("12_e3fge")]
+stream = ExtResource("13_o0s0b")
+
 [node name="Rock" parent="." instance=ExtResource("1_1y8by")]
 visible = false
 position = Vector2(125, 403)
-
-[node name="BackgroundMusic" parent="." instance=ExtResource("12_e3fge")]
-stream = ExtResource("13_o0s0b")
