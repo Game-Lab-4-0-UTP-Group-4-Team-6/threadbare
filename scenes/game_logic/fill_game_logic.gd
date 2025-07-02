@@ -5,7 +5,7 @@ extends Node
 
 signal goal_reached
 
-@export var barrels_to_win: int = 1
+@export var barrels_to_win: int = 6
 @export var intro_dialogue: DialogueResource
 
 var barrels_completed: int = 0
