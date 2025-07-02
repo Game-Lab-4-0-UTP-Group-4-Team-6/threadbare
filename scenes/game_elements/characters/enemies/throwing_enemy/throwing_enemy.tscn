@@ -242,6 +242,9 @@ _data = {
 collision_layer = 2
 collision_mask = 17
 script = ExtResource("1_ffq0m")
+throwing_period = 2.0
+projectile_speed = 100.0
+projectile_follows_player = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
