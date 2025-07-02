@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://6ltusucksrb5"]
+[gd_scene load_steps=21 format=4 uid="uid://6ltusucksrb5"]
 
 [ext_resource type="Script" uid="uid://cp54mgi54nywo" path="res://scenes/game_logic/fill_game_logic.gd" id="1_nhcpf"]
 [ext_resource type="Resource" uid="uid://3vrn5jdxov37" path="res://scenes/quests/story_quests/template/2_template_combat/template_combat_components/template_combat.dialogue" id="2_dnuwx"]
@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://fuhl3l6gxq5k" path="res://scenes/game_elements/props/collectible_item/collectible_item.tscn" id="8_p8m4v"]
 [ext_resource type="Script" uid="uid://bgmwplmj3bfls" path="res://scenes/globals/game_state/inventory/inventory_item.gd" id="9_5oxvp"]
 [ext_resource type="PackedScene" uid="uid://cfcgrfvtn04yp" path="res://scenes/ui_elements/hud/hud.tscn" id="10_egkkn"]
+[ext_resource type="PackedScene" uid="uid://2rbpl811wlv1" path="res://scenes/game_elements/props/background_music/background_music.tscn" id="14_ukdj0"]
+[ext_resource type="AudioStream" uid="uid://c1y5uaen082ov" path="res://scenes/quests/story_quests/aidecay/0_aidecay_intro/aidecay_intro_components/galactic-frenzy-343834.mp3" id="15_1cyfw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1cyfw"]
 texture = ExtResource("4_xrk3j")
@@ -2706,5 +2708,8 @@ limit_right = 2048
 limit_bottom = 2048
 position_smoothing_enabled = true
 editor_draw_limits = true
+
+[node name="BackgroundMusic" parent="." instance=ExtResource("14_ukdj0")]
+stream = ExtResource("15_1cyfw")
 
 [connection signal="goal_reached" from="FillGameLogic" to="OnTheGround/CollectibleItem" method="reveal"]
